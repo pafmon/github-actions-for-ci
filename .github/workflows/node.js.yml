@@ -29,10 +29,10 @@ jobs:
       with:
         name: webpack artifacts
         path: public/
-    - name: Linux version
-      run: uname -a ; return 0
     - name: Windows version
-      run: systeminfo ; return 0
+      run: systeminfo || true
+    - name: Linux version
+      run: uname -a 
         
   
   test:
