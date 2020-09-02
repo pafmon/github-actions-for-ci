@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-#    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -29,11 +29,16 @@ jobs:
       with:
         name: webpack artifacts
         path: public/
+    - name: Linux version
+      run: uname -a
+    - name: Windows version
+      run: systeminfo && 0
+        
   
   test:
     needs: build
 
-#    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
